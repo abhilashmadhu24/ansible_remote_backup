@@ -19,7 +19,7 @@ Steps on master server:
 >> ansible-playbook host.yml
 ```
 
-For changing cron timings , edit host.yml and change as per your requirements
+For changing cron timings , edit backup.yml and change as per your requirements
 
 Output should look like
 
