@@ -1,0 +1,16 @@
+#/bin/bash
+
+
+DATE=$(date +"%Y-%m-%d")
+
+cd
+
+mkdir -p /backup/files_backup/Backup-$DATE/
+
+tar -czf /backup/files_backup/Backup-$DATE/webfiles-$DATE.tar.gz /var/www/html
+
+         
+if [ $? -eq 0 ];
+        then
+            find /backup/files_backup/ -mtime +7 -type f -delete
+fi

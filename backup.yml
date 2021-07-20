@@ -1,0 +1,33 @@
+---
+- hosts: remote
+  become: true
+  tasks:
+    - name: Install prerequisites
+      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      loop:
+         - python
+
+    - name: Creating remote folders
+      file:
+        path: "/usr/local/scripts/"
+        state: directory
+
+    - name: Sending backup shell script to remote locations
+      template:
+        src: "files/backup.sh.j2"
+        dest: "/usr/local/scripts/backup.sh"
+        mode: '0755'
+
+    - name: Creating backup-cron jobs on daily basis on remote locations
+      cron: 
+        minute: "00" 
+        hour: "12"
+        weekday: "*"
+        day: "*"
+        name: "Files backup daily schedule"
+        user: "root"
+        job: "/usr/local/scripts/backup.sh"
+      tags:
+        - cronjobs
+
+
