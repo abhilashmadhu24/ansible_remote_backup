@@ -2,7 +2,8 @@ Hi,
 
 This is a simple ansible playbook for enabling backups on multiple remote servers which doesn't have a centralised backup system available 
 like managed cloud providers. This playbook will help to enable important file backups on multiple  on-premis/unmanaged data-center servers.
-PL: I have used a sample file backup bash script for taking backps as this is a demo only. You can replace it with your requirements.
+
+PL: I have used a sample file backup bash script for taking backups as this is a demo only. You can replace it with your requirements.
 
 Pre-requisites: Ubuntu 18.04 + Ansible 2.6 on master server Ubuntu 18.04 on remote servers with ssh key authentication
 
