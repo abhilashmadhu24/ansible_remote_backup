@@ -1,11 +1,8 @@
 [remote]
-172.16.2.223
-172.16.5.143
-172.16.5.175
-172.16.5.228
-172.16.5.10
+10.1.1.0
+10.2.3.4
 [all:vars]
 ansible_connection='ssh'
-ansible_port='6283'
-ansible_user='ubuntu'
-ansible_ssh_private_key_file='/home/ubuntu/key.pem'
+ansible_port='ssh_port'
+ansible_user='remote_users'
+ansible_ssh_private_key_file='private_key_location'
