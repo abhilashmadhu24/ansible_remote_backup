@@ -16,7 +16,7 @@ Steps on master server:
 >> cd ansible_remote_backup
 >> Edit inventory file and put remote server's details 
 >> Edit or replace files/backup.sh.j2 with your own script 
->> ansible-playbook host.yml
+>> ansible-playbook backup.yml
 ```
 
 For changing cron timings , edit backup.yml and change as per your requirements
